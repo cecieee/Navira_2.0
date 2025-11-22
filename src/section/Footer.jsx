@@ -128,8 +128,8 @@ const Footer = () => {
         <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-accent-1 rounded-full blur-[80px] opacity-20 z-0"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row justify-between items-end gap-4">
-        <div className="flex-1">
+      <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row justify-between items-center md:items-end gap-4">
+        <div className="flex-1 text-center md:text-left">
           <h2
             ref={titleRef}
             className="font-primary text-4xl md:text-6xl tracking-tighter text-transparent bg-clip-text bg-linear-to-r from-white to-white/70 leading-none"
@@ -140,18 +140,18 @@ const Footer = () => {
 
         <div
           ref={linksRef}
-          className="flex flex-col md:flex-row gap-8 md:gap-16 text-xs font-light tracking-widest uppercase"
+          className="flex flex-col md:flex-row gap-8 md:gap-16 text-xs font-light tracking-widest uppercase w-full md:w-auto"
         >
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 items-center md:items-start">
             <h3 className="text-primary font-bold mb-1">Explore</h3>
             <a
-              href="#"
+              href="/"
               className="hover:text-primary transition-colors duration-300"
             >
               Home
             </a>
             <a
-              href="#"
+              href="#about"
               className="hover:text-primary transition-colors duration-300"
             >
               About
@@ -160,33 +160,33 @@ const Footer = () => {
               href="#"
               className="hover:text-primary transition-colors duration-300"
             >
-              Events
+              Workshop
             </a>
             <a
-              href="#"
+              href="#contact"
               className="hover:text-primary transition-colors duration-300"
             >
               Contact
             </a>
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 items-center md:items-start">
             <h3 className="text-primary font-bold mb-1">Connect</h3>
             <div className="flex gap-4 text-xl">
               <a
-                href="#"
+                href="https://www.instagram.com/ieee_sb_cec/"
                 className="hover:text-primary transition-colors duration-300"
               >
                 <FaInstagram />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/cecieee/"
                 className="hover:text-primary transition-colors duration-300"
               >
                 <FaLinkedin />
               </a>
               <a
-                href="#"
+                href="mailto:chairman_ieee@ceconline.edu"
                 className="hover:text-primary transition-colors duration-300"
               >
                 <SiGmail />
