@@ -189,7 +189,7 @@ function Hero() {
         ref={cut5Ref}
         src="/assets/parallax/cut6.webp"
         alt="Background Mountains"
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[1800px] h-auto z-3 pointer-events-none will-change-transform object-cover opacity-90"
+        className="hidden lg:block absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[1800px] h-auto z-3 pointer-events-none will-change-transform object-cover opacity-90"
       />
 
       {/*right hill */}
@@ -197,7 +197,7 @@ function Hero() {
         ref={rightSBRef}
         src="/assets/parallax/right s&b.svg"
         alt="Right Hill"
-        className="absolute bottom-0 right-0 h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] w-auto z-10 pointer-events-none will-change-transform"
+        className="absolute bottom-0 right-0 h-[300px] sm:h-[380px] md:h-[450px] lg:h-[550px] w-auto z-10 pointer-events-none will-change-transform"
         style={{ filter: "drop-shadow(-10px 0 20px rgba(0,0,0,0.3))" }}
       />
 
@@ -205,7 +205,7 @@ function Hero() {
         ref={leftHillRef}
         src="/assets/parallax/left side hill.svg"
         alt="Left Hill"
-        className="absolute bottom-0 left-0 h-[180px] sm:h-[280px] md:h-[380px] lg:h-[450px] w-auto z-10 pointer-events-none will-change-transform"
+        className="absolute bottom-0 left-0 h-[280px] sm:h-[350px] md:h-[430px] lg:h-[500px] w-auto z-10 pointer-events-none will-change-transform"
         style={{ filter: "drop-shadow(10px 0 20px rgba(0,0,0,0.3))" }}
       />
 
