@@ -31,9 +31,9 @@ function About() {
             {/* Title Section */}
             <div className="relative z-20 w-full max-w-7xl mx-auto mb-8 sm:mb-12 lg:mb-16 flex justify-center md:justify-start items-center">
                 <div className="flex flex-row items-center gap-2 sm:gap-4">
-                    <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-widest font-bold'>About</h1>
+                    <h1 className='text-3xl md:px-8 sm:text-4xl md:text-5xl lg:text-6xl tracking-widest font-bold'>About</h1>
                     <div className="w-auto min-w-[150px] sm:min-w-[200px] md:min-w-[250px] text-left h-12 sm:h-16 md:h-20 flex items-center justify-start">
-                        <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-widest font-bold inline-flex italic overflow-hidden text-primary">
+                        <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-widest inline-flex italic overflow-hidden text-primary">
                             {currentWord.split("").map((char, i) => (
                                 <span 
                                     key={`${currentWord}-${i}`} 

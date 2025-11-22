@@ -19,7 +19,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen w-screen flex flex-col gap-6 items-center justify-start overflow-x-hidden bg-linear-to-tr from-primary to-black text-secondary font-primary py-10">
+    <div className="min-h-screen w-full flex flex-col gap-6 items-center justify-start overflow-x-hidden bg-linear-to-tr from-primary to-black text-secondary font-primary py-10">
       <h1 className='text-9xl'>NAVIRA 2.0</h1>
       <About />
       <Workshops />
