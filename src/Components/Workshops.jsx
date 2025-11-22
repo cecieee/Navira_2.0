@@ -51,6 +51,17 @@ function Workshops() {
 
     return(
         <>
+        <style>
+            {`
+                .no-scrollbar::-webkit-scrollbar {
+                    display: none;
+                }
+                .no-scrollbar {
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                }
+            `}
+        </style>
         <div className="w-[90vw] max-w-7xl m-auto text-white py-20">
             <h1 className='text-5xl text-center md:text-left md:text-7xl text-white mb-20'>Workshops</h1>
             <div className="flex flex-col md:flex-row w-full gap-8 justify-center" onMouseMove={handleMouseMove}>
@@ -138,7 +149,7 @@ function Workshops() {
                 onClick={() => setSelectedWorkshop(null)}
             >
                 <div 
-                    className="bg-[#0a0a0a] border border-white/10 rounded-2xl md:rounded-3xl w-[80vw] h-[70vh] md:w-full md:max-w-6xl md:h-auto md:max-h-[90vh] text-white relative shadow-2xl overflow-y-auto animate-[fadeIn_0.3s_ease-out]"
+                    className="bg-[#0a0a0a] border border-white/10 rounded-2xl md:rounded-3xl w-[80vw] h-[70vh] md:w-full md:max-w-6xl md:h-auto md:max-h-[90vh] text-white relative shadow-2xl overflow-y-auto animate-[fadeIn_0.3s_ease-out] no-scrollbar"
                     onClick={(e) => e.stopPropagation()}
                 >
                     <button 

@@ -26,7 +26,18 @@ function About() {
     const currentWord = words[currentWordIndex];
 
     return (
-        <div className="relative w-full min-h-screen text-white flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 overflow-hidden" data-aos="fade-up" data-aos-duration="800">
+        <div className="relative w-full h-screen text-white flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 overflow-hidden" data-aos="fade-up" data-aos-duration="800">
+            <style>
+                {`
+                    ::-webkit-scrollbar {
+                        display: none;
+                    }
+                    html {
+                        -ms-overflow-style: none;
+                        scrollbar-width: none;
+                    }
+                `}
+            </style>
             
             {/* Title Section */}
             <div className="relative z-20 w-full max-w-7xl mx-auto mb-8 sm:mb-12 lg:mb-16 flex justify-center md:justify-start items-center">
