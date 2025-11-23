@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
-import Hero from "./section/hero";
-import Footer from "./section/Footer";
-import About from './Components/About.jsx';
-import Workshops from './Components/Workshops.jsx';
-import LoadingScreen from './Components/LoadingScreen.jsx';
-import IndustrialVisits from "./iv";
-import WhyNavira from "./whynavira";
+import Hero from "./sections/Hero";
+import Footer from "./sections/Footer";
+import About from './sections/About.jsx';
+import Workshops from './sections/Workshops.jsx';
+import LoadingScreen from './components/LoadingScreen.jsx';
+import IndustrialVisits from "./sections/IndustrialVisits";
+import WhyNavira from "./sections/WhyNavira";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
