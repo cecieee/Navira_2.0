@@ -4,6 +4,8 @@ import Footer from "./section/Footer";
 import About from './Components/About.jsx';
 import Workshops from './Components/Workshops.jsx';
 import LoadingScreen from './Components/LoadingScreen.jsx';
+import IndustrialVisits from "./iv";
+import WhyNavira from "./whynavira";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -68,7 +70,9 @@ function App() {
     >
       <Hero />
       <About />
+      <WhyNavira />
       <Workshops />
+      <IndustrialVisits />
       <Footer />
     </div>
   );
