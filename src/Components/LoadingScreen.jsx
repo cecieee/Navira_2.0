@@ -23,6 +23,7 @@ function LoadingScreen() {
                         y="50%" 
                         dominantBaseline="middle" 
                         textAnchor="middle"
+                        className='tracking-widest'
                     >
                         NAVIRA 2.0
                     </text>

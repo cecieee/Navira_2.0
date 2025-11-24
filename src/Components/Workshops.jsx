@@ -64,7 +64,7 @@ function Workshops() {
         </style>
         <div className="w-[90vw] max-w-7xl m-auto text-white py-20">
             <h1 className='text-5xl text-center md:text-left md:text-7xl text-white mb-20'>Workshops</h1>
-            <div className="flex flex-col md:flex-row w-full gap-8 justify-center" onMouseMove={handleMouseMove}>
+            <div className="group/cards flex flex-col md:flex-row w-full gap-8 justify-center" onMouseMove={handleMouseMove}>
                 {workshopsData.map((workshop, index) => (
                     <div 
                         key={workshop.id}
@@ -74,9 +74,9 @@ function Workshops() {
                     >
                         {/* Spotlight Effect */}
                         <div 
-                            className="pointer-events-none absolute -inset-px transition duration-300"
+                            className="pointer-events-none absolute -inset-px transition duration-300 opacity-0 group-hover/cards:opacity-100"
                             style={{
-                                background: `radial-gradient(900px circle at var(--mouse-x) var(--mouse-y), rgba(0,265,255,0.35), transparent 40%)`
+                                background: `radial-gradient(1100px circle at var(--mouse-x) var(--mouse-y), rgba(0,265,255,0.35), transparent 40%)`
                             }}
                         />
 
@@ -163,16 +163,18 @@ function Workshops() {
                     
                     <div className="flex flex-col md:flex-row">
                         {/* Left Part (2/5) */}
-                        <div className="w-full md:w-2/5 bg-white/5 p-3 md:p-8 flex flex-col gap-3 md:gap-6 md:border-r border-white/10">
-                            {/* Top: Image */}
-                            <div className="w-32 h-32 md:w-full md:h-auto md:aspect-square rounded-xl md:rounded-2xl overflow-hidden bg-gray-800 mx-auto md:mx-0">
-                                 <img src={selectedWorkshop.speakerImage} alt={selectedWorkshop.speakerName} className="w-full h-full object-cover" />
-                            </div>
-                            {/* Bottom: Info */}
-                            <div className="flex flex-col gap-1 md:gap-2 text-center md:text-left">
-                                <h3 className="text-lg md:text-3xl font-bold">{selectedWorkshop.speakerName}</h3>
-                                <p className="text-primary text-sm md:text-xl">{selectedWorkshop.speakerRole}</p>
-                                <p className="text-xs md:text-sm text-gray-400 leading-relaxed">{selectedWorkshop.speakerExpertise}</p>
+                        <div className="w-full md:w-2/5 bg-white/5 md:border-r border-white/10">
+                            <div className="p-3 md:p-8 flex flex-col gap-3 md:gap-6 md:sticky md:top-0">
+                                {/* Top: Image */}
+                                <div className="w-32 h-32 md:w-full md:h-auto md:aspect-square rounded-xl md:rounded-2xl overflow-hidden bg-gray-800 mx-auto md:mx-0">
+                                     <img src={selectedWorkshop.speakerImage} alt={selectedWorkshop.speakerName} className="w-full h-full object-cover" />
+                                </div>
+                                {/* Bottom: Info */}
+                                <div className="flex flex-col gap-1 md:gap-2 text-center md:text-left">
+                                    <h3 className="text-lg md:text-3xl font-bold">{selectedWorkshop.speakerName}</h3>
+                                    <p className="text-primary text-sm md:text-xl">{selectedWorkshop.speakerRole}</p>
+                                    <p className="text-xs md:text-sm text-gray-400 leading-relaxed">{selectedWorkshop.speakerExpertise}</p>
+                                </div>
                             </div>
                         </div>
 
