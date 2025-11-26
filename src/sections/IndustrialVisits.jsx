@@ -21,96 +21,79 @@ const visits = [
 export default function IndustrialVisits() {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const toggleCard = (i) => {
-    // Mobile tap toggle
-    setOpenIndex(openIndex === i ? null : i);
+  const toggleCard = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section className="py-20 bg-[#062B39]">
-      <div className="max-w-5xl mx-auto px-6 text-center">
+    <section className="py-8 md:py-16 bg-gradient-to-br from-[#062B39] to-[#0A4A5F]">
+      <div className="max-w-6xl mx-auto px-4">
+        
+        {/* Section Header */}
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-4">
+            Industrial <span className="text-[#4AB0C3]">Visits</span>
+          </h2>
+          <p className="text-sm md:text-base lg:text-lg text-[#C6E6EC] max-w-2xl mx-auto px-2">
+            Hands-on learning experiences that bridge the gap between theoretical knowledge and real-world applications
+          </p>
+        </div>
 
-        {/* Title */}
-        <h2 className="text-3xl md:text-4xl font-bold text-white">
-          Industrial Visits
-        </h2>
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 justify-items-center">
+          {visits.map((visit, index) => (
+            <div 
+              key={index} 
+              className="relative w-full max-w-[320px] mb-6 md:mb-0 cursor-pointer md:cursor-auto"
+              onClick={() => toggleCard(index)}
+            >
+              {/* OUTER SHAPE - Lighter color */}
+              <div className="absolute inset-0 bg-[#0A3A4F] rounded-[20px] shadow-xl md:shadow-2xl"></div>
 
-        {/* Cards */}
-        <div
-          className="
-            grid grid-cols-1 
-            sm:grid-cols-2 
-            lg:grid-cols-3 
-            gap-10 
-            justify-center 
-            place-items-center
-            mt-14
-          "
-        >
-          {visits.map((v, i) => {
-            const isOpen = openIndex === i;
+              {/* INNER BORDER SHAPE */}
+              <div className="absolute inset-1 border-4 border-[#4AB0C3] rounded-[16px]"></div>
 
-            return (
-              <div
-                key={i}
-                className={`
-                  group
-                  relative
-                  rounded-2xl 
-                  overflow-hidden 
-                  shadow-xl 
-                  border 
-                  w-72
-                  transition-all duration-500
-                  ${isOpen ? "bg-[#F3D9BF]" : "bg-white/5 border-[#4AB0C3]/30"}
-                  hover:bg-[#F3D9BF]
-                `}
-                onClick={() => toggleCard(i)}
-              >
-                {/* Image */}
-                <img
-                  src={v.img}
-                  alt={v.title}
-                  className="
-                    w-full 
-                    h-48
-                    object-cover 
-                    object-center
-                    transition-all
-                    duration-500
-                    group-hover:scale-105
-                  "
-                />
-
-                {/* Title Bar */}
-                <div className="bg-[#C6E6EC] text-[#062B39] py-3 px-4">
-                  <h3 className="text-lg font-semibold">{v.title}</h3>
-                </div>
-
-                {/* Description Panel (Hover + Mobile Toggle) */}
-                <div
-                  className={`
-                    absolute 
-                    left-0 
-                    right-0 
-                    bottom-0
-                    bg-[#F3D9BF]
-                    text-[#062B39]
-                    p-5
-                    transition-all duration-500
-                    ${
-                      isOpen
-                        ? "translate-y-0 opacity-100"
-                        : "translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100"
-                    }
-                  `}
-                >
-                  <h3 className="text-lg font-semibold mb-2">{v.title}</h3>
-                  <p className="text-sm leading-relaxed">{v.desc}</p>
+              {/* RECTANGULAR IMAGE */}
+              <div className="relative z-10 flex justify-center -mt-8 md:-mt-10 mb-4">
+                <div className="w-full max-w-[280px] h-48 md:h-56 bg-[#0A3A4F] rounded-xl p-1 shadow-lg md:shadow-xl">
+                  <div className="w-full h-full border-4 border-[#4AB0C3] rounded-lg overflow-hidden">
+                    <img
+                      src={visit.img}
+                      alt={visit.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
               </div>
-            );
-          })}
+
+              {}
+              <div className="relative z-10 px-4 text-center">
+                <h3 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3">
+                  {visit.title}
+                </h3>
+              </div>
+
+              {/* DESCRIPTION BOX - Hidden on mobile by default, shown on click */}
+              <div className={`
+                relative z-10 px-4 pb-6 text-center transition-all duration-300
+                md:flex md:flex-col md:justify-center
+                ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}
+                md:max-h-96 md:opacity-100
+              `}>
+                <p className="text-sm md:text-base text-[#C6E6EC] leading-relaxed">
+                  {visit.desc}
+                </p>
+              </div>
+
+              {/* Mobile Tap Indicator */}
+              <div className={`
+                md:hidden text-center text-xs text-[#4AB0C3] mt-2 transition-opacity duration-300
+                ${openIndex === index ? 'opacity-0' : 'opacity-100'}
+              `}>
+                Tap to {openIndex === index ? 'close' : 'read more'}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
