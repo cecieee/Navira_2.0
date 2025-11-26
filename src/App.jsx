@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import Hero from "./sections/Hero";
 import Footer from "./sections/Footer";
-import About from './sections/About.jsx';
-import Workshops from './sections/Workshops.jsx';
-import LoadingScreen from './components/LoadingScreen.jsx';
+import About from "./sections/About.jsx";
+import Workshops from "./sections/Workshops.jsx";
+import LoadingScreen from "./components/LoadingScreen.jsx";
 import IndustrialVisits from "./sections/IndustrialVisits";
 import WhyNavira from "./sections/WhyNavira";
 import { gsap } from "gsap";
@@ -68,7 +68,9 @@ function App() {
       className="w-screen h-screen overflow-y-auto overflow-x-hidden bg-linear-to-tr from-primary to-black text-secondary font-primary"
       style={{ margin: 0, padding: 0 }}
     >
-      <Hero />
+      <div id="hero">
+        <Hero />
+      </div>
       <About />
       <WhyNavira />
       <Workshops />
