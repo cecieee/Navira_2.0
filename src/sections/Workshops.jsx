@@ -55,6 +55,15 @@ function Workshops() {
     });
   };
 
+  const handleMouseLeave = () => {
+    cardsRef.current.forEach((card) => {
+      if (!card) return;
+      // Set mouse position far outside the card to hide the glow
+      card.style.setProperty("--mouse-x", `-9999px`);
+      card.style.setProperty("--mouse-y", `-9999px`);
+    });
+  };
+
   return (
     <>
       <style>
@@ -76,6 +85,7 @@ function Workshops() {
           <div
             className="flex flex-col md:flex-row w-full gap-8 justify-center"
             onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
           >
             {workshopsData.map((workshop, index) => (
               <div
