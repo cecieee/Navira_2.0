@@ -5,7 +5,7 @@ import "aos/dist/aos.css";
 function About() {
   const words = ["US", "NAVIRA"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [animationStatus, setAnimationStatus] = useState("idle"); // 'idle', 'exiting', 'entering'
+  const [animationStatus, setAnimationStatus] = useState("idle");
 
   useEffect(() => {
     AOS.init();
@@ -17,7 +17,7 @@ function About() {
         setTimeout(() => {
           setAnimationStatus("idle");
         }, 50);
-      }, 500); // Wait for exit animation to finish
+      }, 500);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
@@ -25,67 +25,112 @@ function About() {
   const currentWord = words[currentWordIndex];
 
   return (
-    <div className="relative w-full min-h-[60vh] text-white flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 ">
+    <div className="relative w-full min-h-[70vh] text-white flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+      {/* Decorative Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-10 left-10 w-32 h-32 border border-primary/20 rounded-full"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 border border-primary/10 rounded-full"></div>
+        <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-primary/40 rounded-full animate-pulse"></div>
+      </div>
+
       {/* Title Section */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto mb-8 sm:mb-12 lg:mb-16 flex justify-center md:justify-start items-center">
+      <div className="relative z-20 w-full max-w-7xl mx-auto mb-8 sm:mb-12 lg:mb-16 flex justify-center items-center">
         <div className="flex flex-row items-center gap-2 sm:gap-4">
-          <h1 className="text-3xl md:px-8 sm:text-4xl md:text-5xl lg:text-6xl tracking-widest font-primary">
-            About
+          <h1 className="text-3xl md:px-0 sm:text-4xl md:text-5xl lg:text-6xl tracking-widest font-primary">
+            ABOUT
           </h1>
-          <div className="w-auto min-w-[150px] sm:min-w-[200px] md:min-w-[250px] text-left h-12 sm:h-16 md:h-20 flex items-center justify-start">
-            <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-widest inline-flex italic overflow-hidden text-primary font-primary">
-              {currentWord.split("").map((char, i) => (
-                <span
-                  key={`${currentWord}-${i}`}
-                  className={`inline-block transition-all duration-700 ease-in-out ${
-                    animationStatus === "exiting"
-                      ? "-translate-y-full opacity-0"
-                      : animationStatus === "entering"
-                      ? "translate-y-full opacity-0"
-                      : "translate-y-0 opacity-100"
-                  }`}
-                  style={{
-                    transitionDelay: `${i * 50}ms`,
-                  }}
-                >
-                  {char === " " ? "\u00A0" : char}
-                </span>
-              ))}
+          <div className="w-auto text-left h-12 sm:h-16 md:h-20 flex items-center justify-start">
+            <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-widest inline-flex overflow-hidden text-primary font-primary">
+              NAVIRA
             </span>
           </div>
         </div>
       </div>
 
       {/* Content Container */}
-      <div className="relative z-20 w-[80vw] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-10 lg:gap-12">
-        {/* Left Side - Image */}
-        <div className="w-full lg:w-1/2 flex justify-center lg:justify-start order-1">
-          <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-xl aspect-video rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
-            <div className="absolute inset-0 group-hover:bg-transparent transition-colors duration-300 z-10"></div>
-            <img
-              src="/assets/images/navira.jpeg"
-              alt="Navira Event"
-              className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-            />
-          </div>
-        </div>
+      <div className="relative z-20 w-full max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Left Side - Image with Enhanced Design */}
+          <div className="w-full flex justify-center lg:justify-start order-2 lg:order-1">
+            <div className="relative w-full max-w-md sm:max-w-lg group">
+              {/* Decorative border frame */}
+              <div className="absolute -inset-4 border-2 border-primary/30 rounded-2xl transform rotate-3 transition-transform duration-500 group-hover:rotate-6"></div>
+              <div className="absolute -inset-2 border border-accent-2/20 rounded-2xl transform -rotate-2 transition-transform duration-500 group-hover:-rotate-3"></div>
 
-        {/* Right Side - Text Content */}
-        <div className="w-full lg:w-1/2 flex justify-center items-center order-2 px-2 sm:px-4 lg:px-0">
-          <p className="font-sans text-lg sm:text-base md:text-lg lg:text-xl leading-relaxed text-gray-300">
-            Navira: Journey Beyond Limits, an all-Kerala event by IEEE Women in
-            Engineering Affinity Group College of Engineering Chengannur(WIE AG
-            CEC), and IEEE Industry Applications Society Student Branch Chapter
-            College of Engineering Chengannur (IAS SBC CEC), emerges as a
-            perfect platform to blend knowledge, creativity, and innovation.
-            Navira is the combined successor to the flagship events Daksha and
-            Emergence, conducted in previous years by IEEE WIE AG CEC and IEEE
-            IAS SBC CEC. It promises to deliver an inexplicable experience
-            through the fusion of unparalleled vision and elegance.
-          </p>
+              {/* Main image container */}
+              <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-primary/40">
+                <div className="absolute inset-0 bg-linear-to-br from-primary/20 via-transparent to-accent-2/20 group-hover:opacity-0 transition-opacity duration-500 z-10"></div>
+                <img
+                  src="/assets/images/navira.jpeg"
+                  alt="Navira Event"
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                />
+
+                {/* Glowing corner accents */}
+                <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-primary rounded-tl-xl opacity-60"></div>
+                <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-primary rounded-br-xl opacity-60"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side - Text Content with Enhanced Typography */}
+          <div className="w-full flex flex-col justify-center order-1 lg:order-2 px-2 sm:px-4 lg:px-0">
+   
+            {/* Main description */}
+            <div className="space-y-4">
+              <p className="font-sans text-base sm:text-lg leading-relaxed text-gray-300">
+                <span className="text-primary font-semibold">
+                  Navira: Journey Beyond Limits
+                </span>
+                , an all-Kerala event by IEEE Women in Engineering Affinity
+                Group College of Engineering Chengannur (WIE AG CEC), and IEEE
+                Industry Applications Society Student Branch Chapter College of
+                Engineering Chengannur (IAS SBC CEC), emerges as a perfect
+                platform to blend knowledge, creativity, and innovation.
+              </p>
+
+              <p className="font-sans text-base sm:text-lg leading-relaxed text-gray-300">
+                Navira is the combined successor to the flagship events{" "}
+                <span className="text-accent-2">Daksha</span> and
+                <span className="text-accent-2"> Emergence</span>, conducted in
+                previous years by IEEE WIE AG CEC and IEEE IAS SBC CEC. It
+                promises to deliver an inexplicable experience through the
+                fusion of unparalleled vision and elegance.
+              </p>
+            </div>
+
+            {/* Stats or highlights */}
+            {/* <div className="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-primary/20">
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-primary font-primary">
+                  2025
+                </div>
+                <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wide mt-1">
+                  Edition
+                </div>
+              </div>
+              <div className="text-center border-x border-primary/20">
+                <div className="text-2xl sm:text-3xl font-bold text-primary font-primary">
+                  ALL
+                </div>
+                <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wide mt-1">
+                  Kerala
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-primary font-primary">
+                  IEEE
+                </div>
+                <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wide mt-1">
+                  Powered
+                </div>
+              </div>
+            </div> */}
+          </div>
         </div>
       </div>
     </div>
   );
 }
+
 export default About;
