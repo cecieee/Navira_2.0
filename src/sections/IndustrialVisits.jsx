@@ -2,106 +2,101 @@ import React, { useState } from "react";
 
 const visits = [
   {
-    title: "Water Authority",
+    number: "01",
+    title: "WATER AUTHORITY",
     desc: "The participants gain an in-depth understanding of sectoral ecosystems with a visit to the Kerala Water Authority Sub Division Office, Tiruvalla.",
     img: "/assets/iv/sample.webp",
   },
   {
-    title: "KSEB (220kV Substation)",
+    number: "02",
+    title: "KSEB (220kV SUBSTATION)",
     desc: "Students explore major electrical infrastructure and understand how high-voltage transmission systems operate safely.",
     img: "/assets/iv/sample.webp",
   },
   {
-    title: "ASAP Community Skill Park",
+    number: "03",
+    title: "ASAP COMMUNITY SKILL PARK",
     desc: "Participants experience hands-on learning with industry-oriented training modules provided by ASAP Kerala.",
     img: "/assets/iv/sample.webp",
   },
 ];
 
 export default function IndustrialVisits() {
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const toggleCard = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
-    <section className="py-8 md:py-16 ">
-      <div className="max-w-6xl mx-auto px-4">
+    <section className="py-12 md:py-20 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl text-white mb-3 md:mb-4 font-primary">
-            Industrial <span className="text-primary">Visits</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl text-white mb-4 font-primary tracking-wider">
+            OUR <span className="text-primary">APPROACH</span>
           </h2>
-          <p className="text-sm md:text-base lg:text-lg text-accent-2 max-w-2xl mx-auto px-2">
-            Hands-on learning experiences that bridge the gap between
-            theoretical knowledge and real-world applications
-          </p>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 justify-items-center">
-          {visits.map((visit, index) => (
-            <div
-              key={index}
-              className="relative w-full max-w-[320px] mb-6 md:mb-0 cursor-pointer md:cursor-auto"
-              onClick={() => toggleCard(index)}
-            >
-              {/* OUTER SHAPE - Lighter color */}
-              <div className="absolute inset-0 bg-[#0A3A4F] rounded-[20px] shadow-xl md:shadow-2xl"></div>
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-8 lg:gap-16 items-start">
+          {/* Left Side - Large Featured Image */}
+          <div className="w-full">
+            <div className="relative bg-[#0A2F3F] rounded-lg overflow-hidden shadow-2xl border-4 border-primary/30">
+              <img
+                src={visits[selectedIndex].img}
+                alt={visits[selectedIndex].title}
+                className="w-full h-auto aspect-3/4 object-cover"
+              />
+            </div>
+          </div>
 
-              {/* INNER BORDER SHAPE */}
-              <div className="absolute inset-1 border-4 border-primary rounded-[16px]"></div>
+          {/* Right Side - Vertical Cards */}
+          <div className="w-full flex flex-col justify-start space-y-0">
+            {visits.map((visit, index) => (
+              <div
+                key={index}
+                className="relative border-l-4 border-gray-700 pl-0">
+                {/* Card Header - Always Visible */}
+                <div
+                  onClick={() =>
+                    setSelectedIndex(selectedIndex === index ? -1 : index)
+                  }
+                  className="cursor-pointer py-6 px-6 hover:bg-gray-900/20 transition-colors">
+                  <div className="flex items-start gap-4">
+                    {/* Number */}
+                    <div className="text-6xl font-light text-gray-600 leading-none">
+                      {visit.number}
+                    </div>
 
-              {/* RECTANGULAR IMAGE */}
-              <div className="relative z-10 flex justify-center -mt-8 md:-mt-10 mb-4">
-                <div className="w-full max-w-[280px] h-48 md:h-56 bg-[#0A3A4F] rounded-xl p-1 shadow-lg md:shadow-xl">
-                  <div className="w-full h-full border-4 border-primary rounded-lg overflow-hidden">
-                    <img
-                      src={visit.img}
-                      alt={visit.title}
-                      className="w-full h-full object-cover"
-                    />
+                    {/* Title */}
+                    <div className="flex-1 pt-2">
+                      <h3 className="text-base md:text-lg font-bold text-gray-400 tracking-wide uppercase">
+                        {visit.title}
+                      </h3>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {}
-              <div className="relative z-10 px-4 text-center">
-                <h3 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3">
-                  {visit.title}
-                </h3>
-              </div>
+                {/* Expandable Content - Only for Selected Card */}
+                {selectedIndex === index && (
+                  <div className="px-6 pb-6 animate-fadeIn">
+                    <div className="pl-20">
+                      <p className="text-sm md:text-base text-gray-400 leading-relaxed mb-4">
+                        {visit.desc}
+                      </p>
 
-              {/* DESCRIPTION BOX - Hidden on mobile by default, shown on click */}
-              <div
-                className={`
-                relative z-10 px-4 pb-6 text-center transition-all duration-300
-                md:flex md:flex-col md:justify-center
-                ${
-                  openIndex === index
-                    ? "max-h-96 opacity-100"
-                    : "max-h-0 opacity-0 overflow-hidden"
-                }
-                md:max-h-96 md:opacity-100
-              `}
-              >
-                <p className="text-sm md:text-base text-accent-2 leading-relaxed">
-                  {visit.desc}
-                </p>
-              </div>
+                      {/* Learn More Button */}
+                      <button className="inline-flex items-center justify-center px-6 py-2 border-2 border-primary rounded-full text-primary text-sm font-semibold hover:bg-primary hover:text-background transition-all duration-300">
+                        LEARN MORE
+                      </button>
+                    </div>
+                  </div>
+                )}
 
-              {/* Mobile Tap Indicator */}
-              <div
-                className={`
-                md:hidden text-center text-xs text-primary mt-2 transition-opacity duration-300
-                ${openIndex === index ? "opacity-0" : "opacity-100"}
-              `}
-              >
-                Tap to {openIndex === index ? "close" : "read more"}
+                {/* Divider Line - except for last item */}
+                {index < visits.length - 1 && (
+                  <div className="border-b border-gray-800 ml-6"></div>
+                )}
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

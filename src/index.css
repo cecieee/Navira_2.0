@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Dancing+Script:wght@400;700&display=swap");
 
 @font-face {
   font-family: Stargaze;
@@ -7,6 +8,8 @@
 
 @theme {
   --font-primary: Stargaze, sans-serif;
+  --font-script: "Dancing Script", cursive;
+  --font-oswald: "Oswald", sans-serif;
   --color-primary: #4ab0c3;
   --color-secondary: #062b39;
   --color-accent-1: #f3d9bf;

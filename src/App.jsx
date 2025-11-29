@@ -6,6 +6,7 @@ import Workshops from "./sections/Workshops.jsx";
 import LoadingScreen from "./components/LoadingScreen.jsx";
 import IndustrialVisits from "./sections/IndustrialVisits";
 import WhyNavira from "./sections/WhyNavira";
+import Countdown from "./sections/Countdown.jsx";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -70,6 +71,7 @@ function App() {
       <div id="hero">
         <Hero />
       </div>
+      <Countdown />
       <div className="flex flex-col gap-10 bg-secondary">
         <About />
         <WhyNavira />
