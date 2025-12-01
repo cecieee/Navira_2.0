@@ -9,6 +9,7 @@ import WhyNavira from "./sections/WhyNavira";
 import Countdown from "./sections/Countdown.jsx";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Glimpse from "./sections/Glimpse.jsx";
 import StaggeredMenu from "./components/Navbar.jsx";
 
 const menuItems = [
@@ -102,9 +103,10 @@ function App() {
       <div id="hero">
         <Hero />
       </div>
-      <Countdown />
       <div className="flex flex-col gap-10 bg-secondary">
+        <Countdown />
         <About />
+        <Glimpse />
         <WhyNavira />
         <Workshops />
         <IndustrialVisits />
