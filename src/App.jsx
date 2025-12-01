@@ -13,6 +13,9 @@ import Glimpse from "./sections/Glimpse.jsx";
 import Organizer from "./sections/Organizer.jsx";
 import StaggeredMenu from "./components/Navbar.jsx";
 import Register from "./sections/Register.jsx";
+import Sponsors from "./sections/Sponsors.jsx";
+import Aos from "aos";
+// import "aos/dist/aos.css";
 
 const menuItems = [
   { label: "Home", ariaLabel: "Go to home page", link: "/" },
@@ -30,6 +33,7 @@ const socialItems = [
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+  Aos.init();
   const scrollRef = useRef(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -84,8 +88,7 @@ function App() {
     <div
       ref={scrollRef}
       className="w-screen h-screen overflow-y-auto overflow-x-hidden"
-      style={{ margin: 0, padding: 0 }}
-    >
+      style={{ margin: 0, padding: 0 }}>
       <StaggeredMenu
         position="right"
         items={menuItems}
@@ -109,11 +112,15 @@ function App() {
         <Countdown />
         <About />
         <Glimpse />
-        <WhyNavira />
-        <Organizer />
-        <Register />
-        <Workshops />
-        <IndustrialVisits />
+        <div className="flex flex-col gap-10 bg-secondary relative">
+          <WhyNavira />
+          <Organizer />
+          <Sponsors />
+          <Workshops />
+          <IndustrialVisits />
+          <Register />
+          
+        </div>
       </div>
       <Footer />
     </div>

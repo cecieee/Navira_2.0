@@ -24,7 +24,7 @@ export default function Organizer() {
       </div>
       <div className="flex flex-wrap items-center justify-center gap-16">
         {Logos.map((items, index) => (
-          <img src={items} className="h-15" />
+          <img src={items} className="h-15" data-aos="fade-up" data-aos-delay={`${index * 100}`} />
         ))}
       </div>
     </div>

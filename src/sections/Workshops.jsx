@@ -72,12 +72,15 @@ function Workshops() {
          <Heading mainTitle="Workshops" highlightedTitle="" />
           <div
             className="flex flex-col md:flex-row w-full gap-8 justify-center"
+            
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
           >
             {workshopsData.map((workshop, index) => (
               <div
                 key={workshop.id}
+                data-aos="fade-up"
+                data-aos-delay={`${index * 100}`}
                 ref={(el) => (cardsRef.current[index] = el)}
                 className="group relative w-[70%] md:w-1/3 h-[75vw] md:h-[30vw] m-auto md:m-0 rounded-xl md:rounded-3xl overflow-hidden cursor-pointer border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-500 hover:shadow-[0_0_50px_rgba(255,255,255,0.15)] hover:border-white/40 active:shadow-[0_0_50px_rgba(255,255,255,0.15)] active:border-white/40"
                 onClick={() => setSelectedWorkshop(workshop)}

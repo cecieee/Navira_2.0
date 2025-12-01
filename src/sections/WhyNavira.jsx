@@ -38,14 +38,14 @@ export default function WhyNavira() {
     <div className="flex flex-col lg:flex-row gap-3 items-center justify-center text-white py-20">
       <div className="flex flex-col p-8 lg:p-10 ">
         <Heading mainTitle="Why" highlightedTitle="Navira?" />
-        <p className="md:w-120 text-center">
+        <p className="md:w-120 text-center" data-aos="fade-up">
           Navira comes with alot of exciting activities apart from the
           workshops.
         </p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2  gap-4  px-8 lg:px-8 justify-items-center items-center w-fit ">
         {Data.map((item, index) => (
-          <div key={index} className={`size-70 bg-primary rounded-xl p-8 relative sm:even:top-10`}>
+          <div key={index} data-aos="fade-up" data-aos-delay={`${index * 100}`} className={`size-70 bg-primary rounded-xl p-8 relative sm:even:top-10`}>
             <div
               className={`flex flex-col `}>
               <h3 className="text-2xl font-semibold mb-4">{item.title}</h3>

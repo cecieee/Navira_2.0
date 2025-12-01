@@ -1,29 +1,8 @@
 import { useState, useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+
+import Heading from "../components/Heading.jsx";
 
 function About() {
-  const words = ["US", "NAVIRA"];
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [animationStatus, setAnimationStatus] = useState("idle");
-
-  useEffect(() => {
-    AOS.init();
-    const interval = setInterval(() => {
-      setAnimationStatus("exiting");
-      setTimeout(() => {
-        setCurrentWordIndex((prev) => (prev + 1) % words.length);
-        setAnimationStatus("entering");
-        setTimeout(() => {
-          setAnimationStatus("idle");
-        }, 50);
-      }, 500);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const currentWord = words[currentWordIndex];
-
   return (
     <div className="relative w-full min-h-[70vh] text-white flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
       {/* Decorative Background Elements */}
@@ -34,18 +13,7 @@ function About() {
       </div>
 
       {/* Title Section */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto mb-8 sm:mb-12 lg:mb-16 flex justify-center items-center">
-        <div className="flex flex-row items-center gap-2 sm:gap-4">
-          <h1 className="text-3xl md:px-0 sm:text-4xl md:text-5xl lg:text-6xl tracking-widest font-primary">
-            ABOUT
-          </h1>
-          <div className="w-auto text-left h-12 sm:h-16 md:h-20 flex items-center justify-start">
-            <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-widest inline-flex overflow-hidden text-primary font-primary">
-              NAVIRA
-            </span>
-          </div>
-        </div>
-      </div>
+      <Heading mainTitle="About" highlightedTitle="Navira" />
 
       {/* Content Container */}
       <div className="relative z-20 w-full max-w-6xl mx-auto">

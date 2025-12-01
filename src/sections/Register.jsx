@@ -33,6 +33,7 @@ export default function Register() {
         {TIcketDetails.map((ticket, index) => (
           <RegisterCard
             key={index}
+            delay={index * 100}
             category={ticket.category}
             price={ticket.price}
             earlyprices={ticket.earlyprices}

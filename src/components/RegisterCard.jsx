@@ -15,6 +15,8 @@ export default function RegisterCard(props) {
     <>
       <div
         className="w-[600px] h-[210px] text-white rounded-xl bg-primary flex relative  max-[412px]:h-fit"
+        data-aos="fade-up"
+        data-aos-delay={`${props.delay}`}
         ref={cardRef}>
         <div className="flex flex-col text-left p-7 basis-4/6 justify-center max-[412px]:basis-full max-[412px]:p-5">
           {/* Early Bird */}

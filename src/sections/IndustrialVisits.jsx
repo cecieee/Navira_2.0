@@ -27,7 +27,7 @@ export default function IndustrialVisits() {
 
   return (
     <section className="py-12 md:py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-10">
+      <div className=" w-fullpx-4 sm:px-6 lg:px-8 flex flex-col gap-10">
         {/* Section Header */}
         <Heading mainTitle="INDUSTRIAL" highlightedTitle="VISITS" />
 
@@ -35,10 +35,11 @@ export default function IndustrialVisits() {
         <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-8 lg:gap-16 items-start">
           {/* Left Side - Large Featured Image */}
           <div className="w-full">
-            <div className="relative bg-[#0A2F3F] rounded-lg overflow-hidden shadow-2xl shadow-primary/30">
+            <div data-aos="fade-up"  className="relative bg-[#0A2F3F] rounded-lg overflow-hidden shadow-2xl shadow-primary/30">
               <img
                 src={visits[selectedIndex].img}
                 alt={visits[selectedIndex].title}
+                
                 className="w-full h-auto  object-cover"
               />
             </div>
@@ -49,6 +50,8 @@ export default function IndustrialVisits() {
             {visits.map((visit, index) => (
               <div
                 key={index}
+                data-aos="fade-up"
+                data-aos-delay={`${index * 100}`}
                 className={`relative overflow-hidden transition-all ease-in-out border-l-4 ${
                   selectedIndex === index ? "border-primary h-40" : "border-gray-700 h-20"
                 } pl-0`}>
