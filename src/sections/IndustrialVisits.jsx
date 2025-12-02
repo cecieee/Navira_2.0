@@ -26,7 +26,7 @@ export default function IndustrialVisits() {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
-    <section className="py-12 md:py-20 px-24 bg-background">
+    <section className="py-12 md:py-20 md:px-24 bg-background">
       <div className=" w-fullpx-4 sm:px-6 lg:px-8 flex flex-col gap-10">
         {/* Section Header */}
         <Heading mainTitle="INDUSTRIAL" highlightedTitle="VISITS" />
@@ -53,7 +53,7 @@ export default function IndustrialVisits() {
                 data-aos="fade-up"
                 data-aos-delay={`${index * 100}`}
                 className={`relative overflow-hidden transition-all ease-in-out border-l-4 ${
-                  selectedIndex === index ? "border-primary h-40" : "border-gray-700 h-20"
+                  selectedIndex === index ? "border-primary h-60 md:h-40" : "border-gray-700 h-20"
                 } pl-0`}>
                 {/* Card Header - Always Visible */}
                 <div
@@ -89,7 +89,7 @@ export default function IndustrialVisits() {
 
                   <div
                     className={`pb-6  transistion-all ease-in-out overflow-hidden ${
-                      selectedIndex === index ? "h-20" : "h-0"
+                      selectedIndex === index ? "h-40 md:h-20" : "h-0"
                     }`}>
                     <div className="pl-14">
                       <p className="text-sm md:text-base text-gray-400 leading-relaxed mb-4">
