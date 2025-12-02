@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useLayoutEffect } from "react";
 import Hero from "./sections/Hero";
 import Footer from "./sections/Footer";
 import About from "./sections/About.jsx";
@@ -54,20 +54,8 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 7000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    if (!isLoading && scrollRef.current) {
-      ScrollTrigger.config({
-        autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
-      });
-
+  useLayoutEffect(() => {
+    if (!isLoading) {
       ScrollTrigger.scrollerProxy(scrollRef.current, {
         scrollTop(value) {
           if (arguments.length) {
@@ -84,18 +72,21 @@ function App() {
           };
         },
       });
-
       ScrollTrigger.defaults({ scroller: scrollRef.current });
-
-      setTimeout(() => {
-        ScrollTrigger.refresh();
-      }, 100);
+      ScrollTrigger.refresh();
     }
-
     return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
+      ScrollTrigger.killAll();
     };
   }, [isLoading]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 7000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   if (isLoading) {
     return <LoadingScreen />;
