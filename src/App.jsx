@@ -44,7 +44,7 @@ function App() {
   const menuRef = useRef(null);
 
   const handleNavClick = (link) => {
-    gsap.to(window, {
+    gsap.to(scrollRef.current, {
       duration: 1.5,
       scrollTo: { y: link, offsetY: 70 },
       ease: "power4.inOut",
@@ -113,6 +113,7 @@ function App() {
         socialItems={socialItems}
         onItemClick={handleNavClick}
         isFixed={true}
+        logoUrl = "/assets/logos/navira_logo.webp"
       />
       <div id="hero">
         <Hero />
