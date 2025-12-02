@@ -94,18 +94,18 @@ const Footer = () => {
         },
       });
 
-      gsap.from(contentRef.current.children, {
-        y: 20,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: footerRef.current,
-          start: "top 90%",
-          toggleActions: "play none none reverse",
-        },
-      });
+      // gsap.from(contentRef.current.children, {
+      //   y: 20,
+      //   opacity: 0,
+      //   duration: 0.6,
+      //   stagger: 0.1,
+      //   ease: "power2.out",
+      //   scrollTrigger: {
+      //     trigger: footerRef.current,
+      //     start: "top 90%",
+      //     toggleActions: "play none none reverse",
+      //   },
+      // });
     }, footerRef);
 
     return () => ctx.revert();
