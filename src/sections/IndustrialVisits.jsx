@@ -6,19 +6,19 @@ const visits = [
     number: "01",
     title: "WATER AUTHORITY",
     desc: "The participants gain an in-depth understanding of sectoral ecosystems with a visit to the Kerala Water Authority Sub Division Office, Tiruvalla.",
-    img: "/assets/images/navira.jpeg",
+    img: "/assets/iv/IV1.jpeg",
   },
   {
     number: "02",
     title: "KSEB (220kV SUBSTATION)",
     desc: "Students explore major electrical infrastructure and understand how high-voltage transmission systems operate safely.",
-    img: "/assets/iv/sample.webp",
+    img: "/assets/iv/IV2.webp",
   },
   {
     number: "03",
     title: "ASAP COMMUNITY SKILL PARK",
     desc: "Participants experience hands-on learning with industry-oriented training modules provided by ASAP Kerala.",
-    img: "/assets/iv/sample.webp",
+    img: "/assets/iv/IV3.webp",
   },
 ];
 

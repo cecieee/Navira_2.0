@@ -4,13 +4,16 @@ import Heading from "../components/Heading.jsx";
 
 function About() {
   return (
-    <div id="about" className="relative w-full min-h-[70vh] text-white flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+    <div
+      id="about"
+      className="relative w-full min-h-[70vh] text-white flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"
+    >
       {/* Decorative Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-10 left-10 w-32 h-32 border border-primary/20 rounded-full"></div>
         <div className="absolute bottom-20 right-20 w-48 h-48 border border-primary/10 rounded-full"></div>
         <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-primary/40 rounded-full animate-pulse"></div>
-      </div>
+      </div> */}
 
       {/* Title Section */}
       <Heading mainTitle="About" highlightedTitle="Navira" />
@@ -43,7 +46,6 @@ function About() {
 
           {/* Right Side - Text Content with Enhanced Typography */}
           <div className="w-full flex flex-col justify-center order-1 lg:order-2 px-2 sm:px-4 lg:px-0">
-   
             {/* Main description */}
             <div className="space-y-4">
               <p className="font-sans text-base sm:text-lg leading-relaxed text-gray-300">
@@ -58,12 +60,14 @@ function About() {
               </p>
 
               <p className="font-sans text-base sm:text-lg leading-relaxed text-gray-300">
-                Navira is the combined successor to the flagship events{" "}
-                <span className="text-accent-2">Daksha</span> and
-                <span className="text-accent-2"> Emergence</span>, conducted in
-                previous years by IEEE WIE AG CEC and IEEE IAS SBC CEC. It
-                promises to deliver an inexplicable experience through the
-                fusion of unparalleled vision and elegance.
+                NAVIRA 2.0 marks the return of our flagship event after the
+                award-winning success of its inaugural edition, which received
+                the Outstanding Event Award from the IEEE IA/IE/PELS Jt. Chapter
+                Kerala. Organized by IEEE IAS SBC and IEEE WIE AG of CEC, Navira
+                2.0 continues to unite innovation, industry exposure, and
+                student empowerment under one dynamic platform, encouraging
+                participants to push boundaries, enhance skills, and truly
+                journey beyond limits.
               </p>
             </div>
 

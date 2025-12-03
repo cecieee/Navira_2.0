@@ -14,7 +14,7 @@ export default function WhyNavira() {
     {
       title: "Industrial Visits",
       description:
-        "Takes you behind the scenes of innovation with visits to the KSEB substation, Kerala Water Authority, and ASAP Kunnamthanam—exploring power, sustainability, and skill development!",
+        "Takes you behind the scenes of innovation with visits to the KSEB substation, Kerala Water Authority, and ASAP Kunnamthanam, exploring power, sustainability, and skill development!",
       style: "h-80",
       contentStyle: "h-2/3",
     },

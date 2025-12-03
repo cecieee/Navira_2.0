@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import Heading from "../components/Heading";
 
 export default function Countdown() {
   // Change this to your target end date/time (ISO or epoch millis)
@@ -40,23 +41,21 @@ export default function Countdown() {
 
   return (
     <section className="px-4 py-20 flex items-center justify-center relative">
-      <div className="text-center flex flex-col items-center justify-center gap-14 ">
+      <div className="text-center flex flex-col items-center justify-center gap-8">
         <span className="w-full h-0.5 top-[58%] bg-accent-1/70 absolute"></span>
         <span className="w-full h-0.5 top-[64%] bg-accent-1/70 absolute"></span>
         <span className="size-30 rounded-full border border-accent-1 absolute -left-15 bg-secondary top-[54%] sm:top-[50%] lg:top-[45%]"></span>
         <span className="size-20 rounded-full border border-accent-1 absolute -left-10 bg-secondary top-[56.5%] sm:top-[54%] lg:top-[51%]"></span>
         <span className="size-30 rounded-full border border-accent-1 absolute -right-15 bg-secondary top-[54%] sm:top-[50%] lg:top-[45%]"></span>
         <span className="size-20 rounded-full border border-accent-1 absolute -right-10 bg-secondary top-[56.5%] sm:top-[54%] lg:top-[51%]"></span>
-        <h2 className="text-4xl text-primary font-primary  font-semibold tracking-tight">
-          EVENT STARTS IN
-        </h2>
+        <Heading mainTitle="Event" highlightedTitle="Starts In" />
         <div className="inline-flex items-center gap-4 justify-center sm:gap-16 font-teko flex-col sm:flex-row sm:flex-wrap">
           <TimeBox label="Days" value={String(days)} />
-          <Separator />
+          {/* <Separator /> */}
           <TimeBox label="Hours" value={pad2(hours)} />
-          <Separator />
+          {/* <Separator /> */}
           <TimeBox label="Minutes" value={pad2(minutes)} />
-          <Separator />
+          {/* <Separator /> */}
           <TimeBox label="Seconds" value={pad2(seconds)} />
         </div>
         {timeLeft === 0 && (
@@ -74,7 +73,7 @@ function TimeBox({ label, value }) {
         {value}
       </div>
       {/* <span className="size-90 z-0 rounded-full bg-primary/30 absolute -right-30 top-20"></span> */}
-      <div className="mt-1 text-4xl text-accent-1 absolute bottom-0  uppercase left-[125%] origin-left -rotate-90 bg-secondary">{label}</div>
+      <div className="pt-1 text-4xl text-accent-1 absolute bottom-0  uppercase left-[125%] origin-left -rotate-90 bg-secondary">{label}</div>
     </div>
   );
 }

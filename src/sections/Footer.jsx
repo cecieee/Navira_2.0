@@ -220,7 +220,7 @@ const Footer = () => {
 
         <div className="flex items-center gap-3 sm:gap-4 md:gap-5">
           <a
-            href="https://www.instagram.com/ieee_sb_cec/"
+            href="https://www.instagram.com/navira2.0.cec/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-all duration-300 hover:scale-110"
@@ -238,7 +238,7 @@ const Footer = () => {
             <LinkedinIcon />
           </a>
           <a
-            href="mailto:chairman_ieee@ceconline.edu"
+            href="mailto:navira@cecieee.org"
             className="hover:text-primary transition-all duration-300 hover:scale-110"
             aria-label="Email"
           >
@@ -248,19 +248,19 @@ const Footer = () => {
 
         <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 gap-y-2 text-[10px] sm:text-xs text-white/60 px-2">
           <a
-            href="tel:+911234567890"
+            href="tel:+918104798394"
             className="hover:text-primary transition-colors duration-300"
           >
-            <span className="text-white/80">Coordinator 1: </span>+91 12345
-            67890
+            <span className="text-white/80">Aleena M: </span>+91 81047
+            98394
           </a>
           <span className="text-white/30 hidden sm:inline">•</span>
           <a
-            href="tel:+911234567891"
+            href="tel:+918848068893"
             className="hover:text-primary transition-colors duration-300"
           >
-            <span className="text-white/80">Coordinator 2: </span>+91 12345
-            67891
+            <span className="text-white/80">Razeen Riaz: </span>+91 88480
+            68893
           </a>
         </div>
 

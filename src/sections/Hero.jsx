@@ -1,10 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRegistration } from "../lib/useRegistration";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Hero() {
+  const { handleRegisterClick } = useRegistration();
   const heroRef = useRef(null);
   const cut5Ref = useRef(null);
   const leftHillRef = useRef(null);
@@ -225,9 +227,15 @@ function Hero() {
             className="w-full max-w-xs md:max-w-md lg:max-w-2xl"
             alt="Navira logo"
           />
-          <button className="cursor-pointer rounded-xl px-8 py-4 text-xl md:text-2xl font-primary text-white hover:bg-secondary hover:scale-95 transition duration-300 ease-in-out z-50 bg-primary">
+          <a
+            href="https://snaptiqz.com/event/navira/"
+            onClick={handleRegisterClick}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer rounded-xl px-8 py-4 text-xl md:text-2xl font-primary text-white hover:bg-secondary hover:scale-95 transition duration-300 ease-in-out z-50 bg-primary"
+          >
             Register Now
-          </button>
+          </a>
         </div>
       </div>
     </section>

@@ -4,37 +4,37 @@ import Heading from "../components/Heading";
 const workshopsData = [
   {
     id: "01",
-    workshopName: "Sensor Integration and IOT development",
+    workshopName: "Introduction to DevOps",
     speakerName: "Dr. Raghu C. V",
     speakerRole: "Asst. Professor",
     speakerExpertise: "Dept. of Electronics and Communication, NIT Calicut",
     speakerImage: "/assets/images/navira.jpeg",
     shortDesc:
-      "The efficacy in transmitting and receiving real-time data is crucial in applications where timely and accurate information is essential. Sensor integration and IoT development has the potential to transform industries by connecting physical devices to the digital world. Sensors gather real-time data and IoT platforms enable this data to be transmitted, analyzed, and processed using the internet.",
+      "This workshop introduces the core principles of DevOps, focusing on collaboration, automation, and continuous delivery. ",
     fullDesc:
       "The efficacy in transmitting and receiving real-time data is crucial in applications where timely and accurate information is essential. Sensor integration and IoT development has the potential to transform industries by connecting physical devices to the digital world. Sensors gather real-time data and IoT platforms enable this data to be transmitted, analyzed, and processed using the internet. This integration paves opportunity for automation, improved efficiency and decision-making across various applications including industrial automation, healthcare, and agriculture. The workshop on Sensor Integration and IoT Development by Navira offers an opportunity to enhance skills in sensor integration and IoT solution development. The session will be handled by Dr. Raghu C. V, Asst. Professor, Dept. of Electronics and Communication, NIT Calicut.",
   },
   {
     id: "02",
-    workshopName: "Sensor Integration and IOT development",
+    workshopName: "Drone Technology and Applications",
     speakerName: "Dr. Raghu C. V",
     speakerRole: "Asst. Professor",
     speakerExpertise: "Dept. of Electronics and Communication, NIT Calicut",
     speakerImage: "/assets/images/navira.jpeg",
     shortDesc:
-      "The efficacy in transmitting and receiving real-time data is crucial in applications where timely and accurate information is essential. The workshop on Sensor Integration and IoT by Navira offers an opportunity to enhance skills in sensor integration and IoT solution development.",
+      "This workshop provides hands-on experience in drone design, flight control, and navigation, while exploring real-world applications in various fields.",
     fullDesc:
       "The efficacy in transmitting and receiving real-time data is crucial in applications where timely and accurate information is essential. Sensor integration and IoT development has the potential to transform industries by connecting physical devices to the digital world. Sensors gather real-time data and IoT platforms enable this data to be transmitted, analyzed, and processed using the internet. This integration paves opportunity for automation, improved efficiency and decision-making across various applications including industrial automation, healthcare, and agriculture. The workshop on Sensor Integration and IoT Development by Navira offers an opportunity to enhance skills in sensor integration and IoT solution development. The session will be handled by Dr. Raghu C. V, Asst. Professor, Dept. of Electronics and Communication, NIT Calicut.",
   },
   {
     id: "03",
-    workshopName: "Sensor Integration and IOT development",
+    workshopName: "AC to DC Conversion Techniques",
     speakerName: "Dr. Raghu C. V",
     speakerRole: "Asst. Professor",
     speakerExpertise: "Dept. of Electronics and Communication, NIT Calicut",
     speakerImage: "/assets/images/navira.jpeg",
     shortDesc:
-      "The efficacy in transmitting and receiving real-time data is crucial in applications where timely and accurate information is essential. Sensor integration and IoT development has the potential to transform industries by connecting physical devices to the digital world. Sensors gather real-time data and IoT platforms enable this data to be transmitted, analyzed, and processed using the internet.",
+      "This workshop covers the fundamentals of converting AC power to DC using rectifiers and power converters.",
     fullDesc:
       "The efficacy in transmitting and receiving real-time data is crucial in applications where timely and accurate information is essential. Sensor integration and IoT development has the potential to transform industries by connecting physical devices to the digital world. Sensors gather real-time data and IoT platforms enable this data to be transmitted, analyzed, and processed using the internet. This integration paves opportunity for automation, improved efficiency and decision-making across various applications including industrial automation, healthcare, and agriculture. The workshop on Sensor Integration and IoT Development by Navira offers an opportunity to enhance skills in sensor integration and IoT solution development. The session will be handled by Dr. Raghu C. V, Asst. Professor, Dept. of Electronics and Communication, NIT Calicut.",
   },
@@ -73,7 +73,7 @@ function Workshops() {
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
                 className="group relative w-[70%] md:w-1/3 h-[75vw] md:h-[30vw] m-auto md:m-0 rounded-xl md:rounded-3xl overflow-hidden cursor-pointer border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-500 hover:shadow-[0_0_50px_rgba(255,255,255,0.15)] hover:border-white/40 active:shadow-[0_0_50px_rgba(255,255,255,0.15)] active:border-white/40"
-                onClick={() => setSelectedWorkshop(workshop)}
+                // onClick={() => setSelectedWorkshop(workshop)}
               >
                 {/* Spotlight Effect */}
                 <div
@@ -117,7 +117,7 @@ function Workshops() {
                           fill="white"
                           className="text-[10px] font-bold uppercase tracking-widest"
                         >
-                          Click to Read More • Click to Read More •
+                          More Details Soon • More Details Soon •
                         </textPath>
                       </text>
                     </svg>

@@ -17,6 +17,7 @@ import Sponsors from "./sections/Sponsors.jsx";
 import Aos from "aos";
 import EventDetails from "./sections/EventDetails.jsx";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { Toaster } from "react-hot-toast";
 // import "aos/dist/aos.css";
 
 const menuItems = [
@@ -30,9 +31,9 @@ const menuItems = [
 ];
 
 const socialItems = [
-  { label: "Twitter", link: "https://twitter.com" },
-  { label: "GitHub", link: "https://github.com" },
-  { label: "LinkedIn", link: "https://linkedin.com" },
+  { label: "Instagram", link: "https://instagram.com/navira2.0.cec" },
+  { label: "LinkedIn", link: "https://linkedin.com/company/cecieee/" },
+  { label: "Email", link: "mailto:navira@cecieee.org" },
 ];
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
@@ -98,6 +99,8 @@ function App() {
       className="w-screen h-screen overflow-y-auto overflow-x-hidden"
       style={{ margin: 0, padding: 0 }}
     >
+
+      <Toaster />
       <StaggeredMenu
         ref={menuRef}
         items={menuItems}
