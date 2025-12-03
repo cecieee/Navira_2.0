@@ -117,7 +117,7 @@ function Workshops() {
                           fill="white"
                           className="text-[10px] font-bold uppercase tracking-widest"
                         >
-                          More Details Soon • More Details Soon •
+                          Click to see more • Click to see more •
                         </textPath>
                       </text>
                     </svg>
