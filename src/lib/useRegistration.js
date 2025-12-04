@@ -2,7 +2,7 @@ import toast from "react-hot-toast";
 
 export const useRegistration = () => {
   const handleRegisterClick = (e) => {
-    const registrationOpenDate = new Date("2025-12-04T22:30:00");
+    const registrationOpenDate = new Date("2025-12-05T19:00:00");
     const now = new Date();
 
     if (now < registrationOpenDate) {
